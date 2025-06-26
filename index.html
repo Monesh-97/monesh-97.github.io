@@ -16,13 +16,22 @@
       color: #fff;
       padding: 40px 0;
     }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
     .img-me {
       height: 150px;
       border-radius: 50%;
       border: 3px solid #fff;
     }
     .header-text {
-      margin-top: 20px;
+      max-width: 700px;
     }
     .header-text-name {
       font-size: 36px;
@@ -45,16 +54,18 @@
 </head>
 <body>
 
-<div id="header" class="text-center">
-  <img src="./Files/dp_2.jpg" alt="Monesh" class="img-me">
-  <div class="header-text">
-    <div class="header-text-name">Monesh S</div>
-    <div class="header-text-email">moneshkalavai@gmail.com | 7708806851</div>
-    <div class="header-text-links">
-      <a href="https://monesh-97.github.io">Portfolio</a> |
-      <a href="https://github.com/Monesh-97">GitHub</a> |
-      <a href="https://linkedin.com/in/monesh-s-717b46186">LinkedIn</a>
+<div id="header">
+  <div class="header-inner">
+    <div class="header-text">
+      <div class="header-text-name">Monesh S</div>
+      <div class="header-text-email">moneshkalavai@gmail.com | 7708806851</div>
+      <div class="header-text-links">
+        <a href="https://monesh-97.github.io">Portfolio</a> |
+        <a href="https://github.com/Monesh-97">GitHub</a> |
+        <a href="https://linkedin.com/in/monesh-s-717b46186">LinkedIn</a>
+      </div>
     </div>
+    <img src="./Files/dp_2.jpg" alt="Monesh" class="img-me">
   </div>
 </div>
 
