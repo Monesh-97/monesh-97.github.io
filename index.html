@@ -3,154 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monesh S</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Monesh S - Academic CV</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #FFFCF4;
-      color: #000;
+      background: #f9f9f9;
+      transition: background 0.3s, color 0.3s;
     }
-    #header {
+    .sidebar {
       background-color: #045063;
-      color: #fff;
-      padding: 40px 0;
+      color: white;
+      padding: 30px;
+      height: 100vh;
+      position: fixed;
+      width: 250px;
+      overflow: hidden;
     }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .img-me {
-      height: 150px;
+    .sidebar img {
       border-radius: 50%;
-      border: 3px solid #fff;
+      width: 120px;
+      border: 3px solid white;
+      margin-bottom: 20px;
     }
-    .header-text {
-      max-width: 700px;
+    .sidebar a {
+      color: #fff;
+      display: block;
+      margin-bottom: 10px;
     }
-    .header-text-name {
-      font-size: 36px;
-      font-weight: bold;
-    }
-    .header-text-email, .header-text-links {
-      font-size: 18px;
-    }
-    .container section {
-      margin-top: 40px;
+    .content {
+      margin-left: 270px;
+      padding: 40px;
     }
     h2 {
       border-bottom: 2px solid #045063;
       padding-bottom: 5px;
+      margin-top: 40px;
     }
     ul {
       padding-left: 20px;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #f1f1f1;
+    }
+    .dark-mode .sidebar {
+      background-color: #1e1e1e;
+      color: white;
+    }
+    .toggle-container {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-<div id="header">
-  <div class="header-inner">
-    <div class="header-text">
-      <div class="header-text-name">Monesh S</div>
-      <div class="header-text-email">moneshkalavai@gmail.com | 7708806851</div>
-      <div class="header-text-links">
-        <a href="https://monesh-97.github.io">Portfolio</a> |
-        <a href="https://github.com/Monesh-97">GitHub</a> |
-        <a href="https://linkedin.com/in/monesh-s-717b46186">LinkedIn</a>
-      </div>
-    </div>
-    <img src="./Files/dp_2.jpg" alt="Monesh" class="img-me">
+<div class="sidebar text-center">
+  <img src="./Files/dp_2.jpg" alt="Monesh">
+  <h4>Monesh S</h4>
+  <p>Ph.D. Research Scholar<br>Computer Vision | Deep Learning</p>
+  <p>Email: <a href="mailto:moneshkalavai@gmail.com">moneshkalavai@gmail.com</a></p>
+  <p>Phone: 7708806851</p>
+  <hr>
+  <a href="https://monesh-97.github.io">Portfolio</a>
+  <a href="https://github.com/Monesh-97">GitHub</a>
+  <a href="https://linkedin.com/in/monesh-s-717b46186">LinkedIn</a>
+  <div class="toggle-container">
+    <button class="btn btn-sm btn-light" onclick="toggleDarkMode()">Toggle Dark Mode</button>
   </div>
 </div>
 
-<div class="container">
-  <section>
-    <h2>Professional Goal</h2>
-    <p>To encourage creativity and higher order thinking in a way that increases student performance. Seeking a teaching position in a reputed institution that leverages my teaching and research experience. To work with full efficiency and integrity in a long-term association with a reputed institution or organization.</p>
-  </section>
+<div class="content">
+  <h2>Professional Goal</h2>
+  <p>To encourage creativity and higher order thinking in a way that increases student performance. Seeking a teaching position in a reputed institution that leverages my teaching and research experience. To work with full efficiency and integrity in a long-term association with a reputed institution or organization.</p>
 
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li>Ph.D. in Computer Vision, Deep Learning (2022 - Present), Vellore Institute of Technology, Vellore</li>
-      <li>M.E. in Big Data Analytics, 78% (2019 - 2021), College of Engineering, Anna University, Chennai</li>
-      <li>B.Tech in Information Technology, 79% (2015 - 2019), Hindustan Institute of Technology and Science, Chennai</li>
-      <li>HSC, 59% (2014 - 2015), ASM Lakshmi Metric School, Ranipet</li>
-      <li>SSLC, 86% (2012 - 2013), ASM Lakshmi Metric School, Ranipet</li>
-    </ul>
-  </section>
+  <h2>Education</h2>
+  <ul>
+    <li>Ph.D. in Computer Vision (2022 - Present) - VIT, Vellore</li>
+    <li>M.E. in Big Data Analytics (2019 - 2021) - Anna University, 78%</li>
+    <li>B.Tech in Information Technology (2015 - 2019) - Hindustan University, 79%</li>
+    <li>HSC (2014 - 2015) - ASM Lakshmi Metric School, 59%</li>
+    <li>SSLC (2012 - 2013) - ASM Lakshmi Metric School, 86%</li>
+  </ul>
 
-  <section>
-    <h2>Work Experience</h2>
-    <ul>
-      <li>Teaching cum Research Assistant (2022 – Present), Vellore Institute of Technology</li>
-      <li>Assistant Professor (2021 – 2022), Jerusalem College of Engineering</li>
-    </ul>
-  </section>
+  <h2>Work Experience</h2>
+  <ul>
+    <li>Teaching cum Research Assistant (2022 – Present) - VIT, Vellore</li>
+    <li>Assistant Professor (2021 – 2022) - Jerusalem College of Engineering</li>
+  </ul>
 
-  <section>
-    <h2>Publications</h2>
-    <ul>
-      <li>Digitized Bus Ticketing Framework (SCI Indexed)</li>
-      <li>Visual Relationship Prediction and Scene Graph Generation using Bi-GRU</li>
-      <li>Designing and testing of renewable energy-based electric vehicle with GSM Technology (SCI Indexed)</li>
-      <li>Review of Scene Graph Generation Methods (SCI Indexed)</li>
-      <li>Biformer for Scene Graph Generation based on VisionNet with Taylor Hiking Optimization Algorithm (SCI Indexed)</li>
-    </ul>
-  </section>
+  <h2>Publications</h2>
+  <ul>
+    <li>Digitized Bus Ticketing Framework (SCI Indexed)</li>
+    <li>Visual Relationship Prediction and Scene Graph Generation using Bi-GRU</li>
+    <li>Designing and testing of renewable energy-based electric vehicle with GSM Technology (SCI Indexed)</li>
+    <li>Review of Scene Graph Generation Methods (SCI Indexed)</li>
+    <li>Biformer for Scene Graph Generation based on VisionNet with Taylor Hiking Optimization Algorithm (SCI Indexed)</li>
+  </ul>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>Scene Graph Generation and Relationship Modeling with Bi-GRU</li>
-      <li>Transductive Zero-Shot Learning for Video Tag Prediction</li>
-      <li>Centralized Mobile App for Passenger Ticket Generation</li>
-    </ul>
-  </section>
+  <h2>Projects</h2>
+  <ul>
+    <li>Scene Graph Generation and Relationship Modeling with Bi-GRU</li>
+    <li>Transductive Zero-Shot Learning for Video Tag Prediction</li>
+    <li>Centralized Mobile App for Passenger Ticket Generation</li>
+  </ul>
 
-  <section>
-    <h2>Patents</h2>
-    <ul>
-      <li>Deep Learning Based Automated Cow Distraction Device</li>
-      <li>AI-Powered Tire Pressure Monitoring System for Heavy Vehicles</li>
-      <li>AI-Powered Smartwatch for Food Intake Monitoring and Recommender System</li>
-      <li>AI-Powered Smart Eyeglass for Clinical Scene Graph Generation</li>
-    </ul>
-  </section>
+  <h2>Patents</h2>
+  <ul>
+    <li>Deep Learning Based Automated Cow Distraction Device</li>
+    <li>AI-Powered Tire Pressure Monitoring System for Heavy Vehicles</li>
+    <li>AI-Powered Smartwatch for Food Intake Monitoring and Recommender System</li>
+    <li>AI-Powered Smart Eyeglass for Clinical Scene Graph Generation</li>
+  </ul>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Technical:</strong> C, Java, Python, SQL, GCP</li>
-      <li><strong>Domains:</strong> Computer Vision, Deep Learning, Graph Learning</li>
-      <li><strong>Soft Skills:</strong> Multi-tasking, Adaptability, Communication</li>
-    </ul>
-  </section>
+  <h2>Skills</h2>
+  <ul>
+    <li><strong>Technical:</strong> C, Java, Python, SQL, GCP</li>
+    <li><strong>Domains:</strong> Computer Vision, Deep Learning, Graph Learning</li>
+    <li><strong>Soft Skills:</strong> Multi-tasking, Adaptability, Communication</li>
+  </ul>
 
-  <section>
-    <h2>Courses & Workshops</h2>
-    <ul>
-      <li>Data Engineering, Big Data and ML on GCP - Google Cloud</li>
-      <li>Feature Engineering on GCP - Google Cloud</li>
-      <li>Computer Vision - IIT Kharagpur</li>
-      <li>Workshop on AI & CV by TLCE, VIT</li>
-      <li>FDP on Research Opportunities after PhD by TLCE, VIT</li>
-    </ul>
-  </section>
+  <h2>Courses & Workshops</h2>
+  <ul>
+    <li>Data Engineering, Big Data and ML on GCP - Google Cloud</li>
+    <li>Feature Engineering on GCP - Google Cloud</li>
+    <li>Computer Vision - IIT Kharagpur</li>
+    <li>Workshop on AI & CV by TLCE, VIT</li>
+    <li>FDP on Research Opportunities after PhD by TLCE, VIT</li>
+  </ul>
 
-  <section>
-    <h2>Awards</h2>
-    <ul>
-      <li>Dr. APJ Abdul Kalam Award for Review Article Publication in Scopus Indexed Journal (Impact Factor 0.6)</li>
-    </ul>
-  </section>
+  <h2>Awards</h2>
+  <ul>
+    <li>Dr. APJ Abdul Kalam Award for Review Article Publication in Scopus Indexed Journal (Impact Factor 0.6)</li>
+  </ul>
 </div>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
 
 </body>
 </html>
