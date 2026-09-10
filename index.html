@@ -13,6 +13,7 @@
 
   <style>
     :root {
+      color-scheme: light;
       --bg: #f5f8fa;
       --surface: #ffffff;
       --surface-2: #eef5f7;
@@ -23,7 +24,61 @@
       --accent: #19a7a0;
       --border: #dbe6e9;
       --shadow: 0 18px 45px rgba(8, 49, 60, 0.10);
+      --sidebar-start: #083b47;
+      --sidebar-end: #073743;
+      --hero-start: #ffffff;
+      --hero-end: #eef8f8;
+      --tag-bg: #eef5f7;
+      --tag-border: #d4e5e7;
       --radius: 18px;
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0b1114;
+      --surface: #131b1f;
+      --surface-2: #1a292e;
+      --text: #edf5f6;
+      --muted: #a9bdc2;
+      --primary: #55c8d1;
+      --primary-dark: #8ee1e4;
+      --accent: #5ed7cf;
+      --border: #2b3b40;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.30);
+      --sidebar-start: #071f27;
+      --sidebar-end: #0b3039;
+      --hero-start: #162126;
+      --hero-end: #102a30;
+      --tag-bg: #172a30;
+      --tag-border: #2b464d;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-theme="system"] {
+        color-scheme: dark;
+        --bg: #0b1114;
+        --surface: #131b1f;
+        --surface-2: #1a292e;
+        --text: #edf5f6;
+        --muted: #a9bdc2;
+        --primary: #55c8d1;
+        --primary-dark: #8ee1e4;
+        --accent: #5ed7cf;
+        --border: #2b3b40;
+        --shadow: 0 18px 45px rgba(0, 0, 0, 0.30);
+        --sidebar-start: #071f27;
+        --sidebar-end: #0b3039;
+        --hero-start: #162126;
+        --hero-end: #102a30;
+        --tag-bg: #172a30;
+        --tag-border: #2b464d;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      html[data-theme="system"] {
+        color-scheme: light;
+      }
     }
 
     * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -34,6 +89,18 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    .sidebar,
+    .hero,
+    .metric,
+    .card,
+    .research-card,
+    .project-card,
+    .education-card {
+      transition: background-color .25s ease, color .25s ease,
+                  border-color .25s ease, box-shadow .25s ease;
     }
 
     a {
@@ -51,7 +118,7 @@
       width: 285px;
       position: fixed;
       inset: 0 auto 0 0;
-      background: linear-gradient(165deg, #083b47, #0b5664 65%, #073743);
+      background: linear-gradient(165deg, var(--sidebar-start), #0b5664 65%, var(--sidebar-end));
       color: white;
       padding: 34px 25px;
       overflow-y: auto;
@@ -133,6 +200,52 @@
       transform: translateX(3px);
     }
 
+
+    .theme-switcher {
+      margin-top: 18px;
+    }
+
+    .theme-title {
+      color: #b9dfe1;
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .theme-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .theme-btn {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.20);
+      background: rgba(255,255,255,.05);
+      color: #e4f1f2;
+      border-radius: 8px;
+      padding: 7px 3px;
+      font: inherit;
+      font-size: .70rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .theme-btn:hover {
+      background: rgba(255,255,255,.12);
+      color: #fff;
+    }
+
+    .theme-btn.active {
+      background: #ffffff;
+      color: #073c48;
+      border-color: #ffffff;
+    }
+
     .profile-links {
       display: grid;
       gap: 8px;
@@ -161,7 +274,7 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #ffffff, #eef8f8);
+      background: linear-gradient(135deg, var(--hero-start), var(--hero-end));
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 42px;
@@ -319,8 +432,8 @@
     }
 
     .tag {
-      background: var(--surface-2);
-      border: 1px solid #d4e5e7;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
       color: var(--primary-dark);
       border-radius: 999px;
       padding: 7px 12px;
@@ -439,7 +552,7 @@
       border-radius: 11px;
       display: grid;
       place-items: center;
-      background: var(--surface-2);
+      background: var(--tag-bg);
       color: var(--primary);
       font-weight: 800;
     }
@@ -605,6 +718,16 @@
       <p>📍 Ranipet, Tamil Nadu, India</p>
       <p>✉ <a href="mailto:moneshkalavai@gmail.com">moneshkalavai@gmail.com</a></p>
       <p>☎ +91 7708806851</p>
+    </div>
+
+
+    <div class="theme-switcher" aria-label="Color theme">
+      <div class="theme-title">Theme</div>
+      <div class="theme-options">
+        <button class="theme-btn" data-theme-choice="light" type="button">☀ Light</button>
+        <button class="theme-btn" data-theme-choice="dark" type="button">☾ Dark</button>
+        <button class="theme-btn" data-theme-choice="system" type="button">◐ System</button>
+      </div>
     </div>
 
     <div class="profile-links">
@@ -1015,5 +1138,42 @@
 
   </main>
 </div>
+
+<script>
+  (function () {
+    const root = document.documentElement;
+    const buttons = document.querySelectorAll(".theme-btn");
+    const storageKey = "monesh-theme";
+
+    function applyTheme(theme) {
+      root.setAttribute("data-theme", theme);
+      localStorage.setItem(storageKey, theme);
+
+      buttons.forEach((button) => {
+        const isActive = button.dataset.themeChoice === theme;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    const savedTheme = localStorage.getItem(storageKey) || "system";
+    applyTheme(["light", "dark", "system"].includes(savedTheme) ? savedTheme : "system");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        applyTheme(button.dataset.themeChoice);
+      });
+    });
+
+    // If "System" is selected, react immediately when the OS/browser theme changes.
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", () => {
+      if (root.getAttribute("data-theme") === "system") {
+        root.setAttribute("data-theme", "system");
+      }
+    });
+  })();
+</script>
+
 </body>
 </html>
