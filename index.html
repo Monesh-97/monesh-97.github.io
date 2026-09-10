@@ -3,140 +3,1012 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monesh S - Academic CV</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta name="description" content="Monesh S — Assistant Professor and AI Researcher specializing in Computer Vision, Scene Graph Generation, Graph Neural Networks, Vision Transformers and Deep Learning.">
+  <meta name="author" content="Monesh S">
+  <title>Monesh S | AI Researcher & Assistant Professor</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
-      transition: background 0.3s, color 0.3s;
+    :root {
+      --bg: #f5f8fa;
+      --surface: #ffffff;
+      --surface-2: #eef5f7;
+      --text: #142126;
+      --muted: #60747b;
+      --primary: #0c5968;
+      --primary-dark: #073c48;
+      --accent: #19a7a0;
+      --border: #dbe6e9;
+      --shadow: 0 18px 45px rgba(8, 49, 60, 0.10);
+      --radius: 18px;
     }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* SIDEBAR */
     .sidebar {
-      background-color: #0c3a45;
-      color: white;
-      padding: 30px;
-      height: 100vh;
+      width: 285px;
       position: fixed;
-      width: 250px;
+      inset: 0 auto 0 0;
+      background: linear-gradient(165deg, #083b47, #0b5664 65%, #073743);
+      color: white;
+      padding: 34px 25px;
+      overflow-y: auto;
+      z-index: 20;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .profile img {
+      width: 128px;
+      height: 128px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,.9);
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+      margin-bottom: 15px;
+    }
+
+    .profile h1 {
+      font-size: 1.55rem;
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .profile .role {
+      color: #bfe8e7;
+      font-weight: 600;
+      margin: 5px 0 3px;
+    }
+
+    .profile .domain {
+      color: #d9eef0;
+      font-size: .88rem;
+      margin: 0;
+    }
+
+    .sidebar hr {
+      border: 0;
+      border-top: 1px solid rgba(255,255,255,.18);
+      margin: 25px 0;
+    }
+
+    .contact p {
+      font-size: .84rem;
+      margin: 9px 0;
+      color: #e3f0f1;
+      word-break: break-word;
+    }
+
+    .contact a {
+      color: #b9f0ed;
+    }
+
+    .nav {
+      margin-top: 22px;
+    }
+
+    .nav a {
+      display: block;
+      padding: 8px 12px;
+      margin: 3px 0;
+      border-radius: 9px;
+      font-size: .86rem;
+      color: #e4f1f2;
+      transition: .2s ease;
+    }
+
+    .nav a:hover {
+      background: rgba(255,255,255,.10);
+      color: white;
+      transform: translateX(3px);
+    }
+
+    .profile-links {
+      display: grid;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .profile-links a {
+      border: 1px solid rgba(255,255,255,.20);
+      border-radius: 9px;
+      padding: 8px 10px;
+      text-align: center;
+      font-size: .82rem;
+      transition: .2s;
+    }
+
+    .profile-links a:hover {
+      background: white;
+      color: var(--primary-dark);
+    }
+
+    /* MAIN */
+    main {
+      margin-left: 285px;
+      width: calc(100% - 285px);
+      padding: 45px 6%;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff, #eef8f8);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      position: relative;
       overflow: hidden;
     }
-    .sidebar img {
-    
-      width: 120px;
-      border: 3px solid white;
-      margin-bottom: 20px;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      right: -90px;
+      top: -100px;
+      background: rgba(25,167,160,.09);
     }
-    .sidebar a {
-      color: #fff;
-      display: block;
-      margin-bottom: 10px;
+
+    .eyebrow {
+      font-family: "JetBrains Mono", monospace;
+      color: var(--primary);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
-    .content {
-      margin-left: 270px;
-      padding: 40px;
+
+    .hero h2 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.12;
+      margin: 12px 0 16px;
+      letter-spacing: -.045em;
+      max-width: 900px;
     }
-    h2 {
-      border-bottom: 2px solid #045063;
-      padding-bottom: 5px;
-      margin-top: 40px;
+
+    .hero h2 span {
+      color: var(--primary);
     }
-    ul {
-      padding-left: 24px;
+
+    .hero p {
+      max-width: 900px;
+      color: var(--muted);
+      margin: 0;
+      font-size: 1rem;
     }
-    .dark-mode {
-      background: #121212;
-      color: #f1f1f1;
+
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
     }
-    .dark-mode .sidebar {
-      background-color: #1e1e1e;
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 17px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: .84rem;
+      border: 1px solid var(--primary);
+      transition: .2s ease;
+    }
+
+    .btn.primary {
+      background: var(--primary);
       color: white;
     }
-    .toggle-container {
-      margin-top: 20px;
+
+    .btn.secondary {
+      background: white;
+      color: var(--primary);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(8, 67, 79, .15);
+    }
+
+    /* METRICS */
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .metric {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 8px 25px rgba(8,49,60,.05);
+    }
+
+    .metric .number {
+      color: var(--primary);
+      font-size: 1.65rem;
+      font-weight: 800;
+      display: block;
+    }
+
+    .metric .label {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-top: 48px;
+      scroll-margin-top: 25px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading .index {
+      font-family: "JetBrains Mono", monospace;
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.55rem;
+      margin: 0;
+      letter-spacing: -.025em;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin-top: -5px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(8,49,60,.05);
+    }
+
+    /* TAGS */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      background: var(--surface-2);
+      border: 1px solid #d4e5e7;
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: .79rem;
+      font-weight: 700;
+    }
+
+    /* RESEARCH */
+    .research-grid,
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+    }
+
+    .research-card,
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 23px;
+      transition: .2s ease;
+    }
+
+    .research-card:hover,
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-label {
+      color: var(--accent);
+      font-family: "JetBrains Mono", monospace;
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .research-card h4,
+    .project-card h4 {
+      margin: 7px 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .research-card p,
+    .project-card p {
+      color: var(--muted);
+      font-size: .88rem;
+      margin: 0;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      border-left: 2px solid #cce0e3;
+      padding-left: 25px;
+      margin-left: 8px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      border-radius: 50%;
+      position: absolute;
+      left: -33px;
+      top: 6px;
+    }
+
+    .timeline-date {
+      font-family: "JetBrains Mono", monospace;
+      color: var(--accent);
+      font-size: .73rem;
+      font-weight: 700;
+    }
+
+    .timeline h4 {
+      margin: 4px 0 2px;
+      font-size: 1.05rem;
+    }
+
+    .timeline .institution {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: .88rem;
+    }
+
+    .timeline ul {
+      color: var(--muted);
+      padding-left: 20px;
+      margin-bottom: 0;
+      font-size: .87rem;
+    }
+
+    /* PUBLICATIONS */
+    .publication {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 17px;
+      padding: 21px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .publication:last-child { border-bottom: 0; }
+
+    .pub-number {
+      width: 43px;
+      height: 43px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-2);
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .publication h4 {
+      margin: 0 0 5px;
+      font-size: .98rem;
+    }
+
+    .publication p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .publication a {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .type {
+      display: inline-block;
+      font-size: .67rem;
+      padding: 3px 7px;
+      border-radius: 5px;
+      background: #e3f4f2;
+      color: #08716b;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    /* EDUCATION */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .education-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .education-card .degree {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: .95rem;
+    }
+
+    .education-card .school {
+      margin-top: 7px;
+      font-size: .84rem;
+      color: var(--muted);
+    }
+
+    .education-card .period {
+      display: block;
+      margin-top: 10px;
+      color: var(--accent);
+      font-family: "JetBrains Mono", monospace;
+      font-size: .7rem;
+      font-weight: 700;
+    }
+
+    /* TWO COLUMN */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .list-clean {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-clean li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .list-clean li:last-child { border-bottom: 0; }
+
+    .list-clean a {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 60px;
+      padding: 25px 0 15px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .78rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 1050px) {
+      .sidebar {
+        width: 240px;
+      }
+      main {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+      }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .education-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 780px) {
+      .layout { display: block; }
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 25px 18px;
+      }
+      .nav { display: none; }
+      main {
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 17px;
+      }
+      .hero { padding: 28px 23px; }
+      .research-grid,
+      .project-grid,
+      .two-col { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      footer { flex-direction: column; }
+    }
+
+    @media (max-width: 430px) {
+      .metrics { grid-template-columns: 1fr; }
+      .hero h2 { font-size: 2rem; }
     }
   </style>
 </head>
+
 <body>
+<div class="layout">
 
-<div class="sidebar text-center">
-  <img src="./Files/formal.png" alt="Monesh">
-  <h4>Monesh S</h4>
-  <p>Ph.D. Research Scholar</p>
-  <p>Domain: [Computer Vision, [Deep / Graph Learning]]</p>
-  <p>Email:<a href="mailto:moneshkalavai@gmail.com">moneshkalavai@gmail.com</a></p>
-  <p>Phone: 7708806851</p>
-  <hr>
-  <a href="https://drive.google.com/file/d/1FhurWfU1N46zUi-eEvZXBdEy08e8cqhV/view?usp=sharing">Resume</a>
-  <a href="https://github.com/Monesh-97">GitHub</a>
-  <a href="https://linkedin.com/in/monesh-s-717b46186">LinkedIn</a>
-  </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="./Files/formal.png" alt="Monesh S">
+      <h1>Monesh S</h1>
+      <p class="role">Assistant Professor · AI Researcher</p>
+      <p class="domain">Computer Vision · Graph Learning</p>
+    </div>
 
-<div class="content">
-  <h2>Professional Goal</h2>
-  <p>To encourage creativity and higher-order thinking in a way that increases student performance. Seeking a teaching position in a reputed institution that leverages my teaching and research experience. To work with full efficiency and integrity in a long-term association with a reputed institution or organization.</p>
+    <hr>
 
-  <h2>Education</h2>
-  <ul>
-    <li>Ph.D. in Computer Vision (2022 - Present) - VIT, Vellore</li>
-    <li>M.E. in Big Data Analytics (2019 - 2021) - Anna University, 78%</li>
-    <li>B.Tech in Information Technology (2015 - 2019) - Hindustan University, 79%</li>
-    <li>HSC (2014 - 2015) - ASM Lakshmi Metric School, 59%</li>
-    <li>SSLC (2012 - 2013) - ASM Lakshmi Metric School, 86%</li>
-  </ul>
+    <div class="contact">
+      <p>📍 Vellore, Tamil Nadu, India</p>
+      <p>✉ <a href="mailto:moneshkalavai@gmail.com">moneshkalavai@gmail.com</a></p>
+      <p>☎ +91 7708806851</p>
+    </div>
 
-  <h2>Work Experience</h2>
-  <ul>
-    <li>Teaching cum Research Assistant (2022 – Present) - VIT, Vellore</li>
-    <li>Assistant Professor (2021 – 2022) - Jerusalem College of Engineering</li>
-  </ul>
+    <div class="profile-links">
+      <a href="https://drive.google.com/file/d/1FhurWfU1N46zUi-eEvZXBdEy08e8cqhV/view?usp=sharing" target="_blank">Download CV</a>
+      <a href="https://github.com/Monesh-97" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/monesh-s-717b46186" target="_blank">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=ndc-S6sAAAAJ" target="_blank">Google Scholar</a>
+    </div>
 
-  <h2>Publications</h2>
-  <ul>
-    <li href ="https://ieeexplore.ieee.org/abstract/document/8741481">Digitized Bus Ticketing Framework (SCI Indexed)</li>
-    <li href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ndc-S6sAAAAJ&citation_for_view=ndc-S6sAAAAJ:u-x6o8ySG0sC">Visual Relationship Prediction and Scene Graph Generation using Bi-GRU</li>
-    <li href="https://pubs.aip.org/aip/acp/article-abstract/2690/1/020044/2880427/Designing-and-testing-of-renewable-energy-based">Designing and testing of renewable energy-based electric vehicle with GSM Technology (SCI Indexed)</li>
-    <li href="https://journals.sagepub.com/doi/10.3233/MGS-230132">Review of Scene Graph Generation Methods (SCI Indexed)</li>
-    <li href="https://ieeexplore.ieee.org/abstract/document/10943181">Biformer for Scene Graph Generation based on VisionNet with Taylor Hiking Optimization Algorithm (SCI Indexed)</li>
-  </ul>
+    <nav class="nav">
+      <a href="#about">01 · About</a>
+      <a href="#research">02 · Research Interests</a>
+      <a href="#current-research">03 · Current Research</a>
+      <a href="#experience">04 · Academic Experience</a>
+      <a href="#education">05 · Education</a>
+      <a href="#publications">06 · Publications</a>
+      <a href="#patents">07 · Patents</a>
+      <a href="#projects">08 · Projects</a>
+      <a href="#skills">09 · Technical Skills</a>
+      <a href="#awards">10 · Awards</a>
+      <a href="#development">11 · Development</a>
+    </nav>
+  </aside>
 
-  <h2>Projects</h2>
-  <ul>
-    <li href="https://github.com/Monesh-97/VRD-and-SGG-using-Bi-GRU">Scene Graph Generation and Relationship Modeling with Bi-GRU</li>
-    <li href="https://github.com/Monesh-97/Multi-Label-Prediction-For-videos-using-Zero_Shot_Learning">Transductive Zero-Shot Learning for Video Tag Prediction</li>
-    <li>Centralised Mobile App for Passenger Ticket Generation</li>
-  </ul>
+  <!-- MAIN -->
+  <main>
 
-  <h2>Patents</h2>
-  <ul>
-    <li href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ndc-S6sAAAAJ&citation_for_view=ndc-S6sAAAAJ:zYLM7Y9cAGgC">Deep Learning based Automated Cow Distraction Device From Plastic Materials</li>
-    <li href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ndc-S6sAAAAJ&citation_for_view=ndc-S6sAAAAJ:IjCSPb-OGe4C">AI-Powered Tire Pressure Monitoring System for Heavy Vehicles</li>
-    <li href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ndc-S6sAAAAJ&citation_for_view=ndc-S6sAAAAJ:UeHWp8X0CEIC">AI-Powered Smartwatch for Food Intake Monitoring and Recommender System</li>
-    <li href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ndc-S6sAAAAJ&citation_for_view=ndc-S6sAAAAJ:Tyk-4Ss8FVUC">AI-Powered Smart Eyeglass for Clinical Scene Graph Generation</li>
-  </ul>
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div class="eyebrow">AI · Computer Vision · Research</div>
+      <h2>Building intelligent systems through <span>visual reasoning</span> and graph-based learning.</h2>
+      <p>
+        Assistant Professor and AI Researcher specializing in Computer Vision, Scene Graph Generation,
+        Graph Neural Networks, Vision Transformers, and Deep Learning. Doctoral research at Vellore
+        Institute of Technology focuses on graph-based visual reasoning and multimodal scene understanding.
+      </p>
 
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Technical:</strong> C, Java, Python, SQL, GCP</li>
-    <li><strong>Domains:</strong> Computer Vision, Deep Learning, Graph Learning</li>
-    <li><strong>Soft Skills:</strong> Multi-tasking, Adaptability, Communication</li>
-  </ul>
+      <div class="quick-actions">
+        <a class="btn primary" href="https://github.com/Monesh-97" target="_blank">View GitHub</a>
+        <a class="btn secondary" href="https://scholar.google.com/citations?user=ndc-S6sAAAAJ" target="_blank">Google Scholar</a>
+        <a class="btn secondary" href="mailto:moneshkalavai@gmail.com">Contact Me</a>
+      </div>
+    </section>
 
-  <h2>Courses & Workshops</h2>
-  <ul>
-    <li href="https://drive.google.com/file/d/1dpbn_2KPVTt-U4BcqFzoQLP7v_TBSpJX/view?usp=sharing">Data Engineering, Big Data and ML on GCP - Google Cloud</li>
-    <li href="https://drive.google.com/file/d/1vL-rjSLd-p5CWnQBEejlI909almw-gTc/view?usp=sharing">Feature Engineering on GCP - Google Cloud</li>
-    <li href="https://drive.google.com/file/d/1EGikH3rNyl5-3sDC1oOBtIRNdKd-bhra/view?usp=sharing">Computer Vision - IIT Kharagpur</li>
-    <li href="https://drive.google.com/file/d/1ToW5O38-RMAvchjG7EjWvjaxoyzFe4Jf/view?usp=sharing">Workshop on AI & CV by TLCE, VIT</li>
-    <li href="https://drive.google.com/file/d/1MKSOzWhNpp5jdCT0-r9-gVX6eqBRXVv6/view?usp=sharing">Deep spectacle of Deep learning architecture concepts and GAN with Deep fake techniques</li>
-  </ul>
+    <!-- METRICS -->
+    <div class="metrics">
+      <div class="metric">
+        <span class="number">Ph.D.</span>
+        <span class="label">Computer Vision · VIT</span>
+      </div>
+      <div class="metric">
+        <span class="number">6</span>
+        <span class="label">Published Patents</span>
+      </div>
+      <div class="metric">
+        <span class="number">5+</span>
+        <span class="label">Journal & Conference Works</span>
+      </div>
+      <div class="metric">
+        <span class="number">7</span>
+        <span class="label">Core Courses Taught</span>
+      </div>
+    </div>
 
-  <h2>Awards</h2>
-  <ul>
-    <li href="https://drive.google.com/file/d/1gf3RM5QnWRJfoCXhOqvawMDjm52K0n-3/view?usp=sharing">Dr. APJ Abdul Kalam Award for Review Article Publication in Scopus Indexed Journal (Impact Factor 0.6)</li>
-  </ul>
+    <!-- RESEARCH -->
+    <section id="research">
+      <div class="section-heading">
+        <span class="index">02</span>
+        <h3>Research Interests</h3>
+      </div>
+      <div class="card">
+        <div class="tags">
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Scene Graph Generation</span>
+          <span class="tag">Graph Neural Networks</span>
+          <span class="tag">Vision Transformers</span>
+          <span class="tag">Deep Learning</span>
+          <span class="tag">Visual Relationship Detection</span>
+          <span class="tag">Vision-Language Models</span>
+          <span class="tag">Multimodal Learning</span>
+          <span class="tag">Explainable AI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT RESEARCH -->
+    <section id="current-research">
+      <div class="section-heading">
+        <span class="index">03</span>
+        <h3>Current Research</h3>
+      </div>
+      <p class="section-intro">Selected ongoing, conceptual and future research directions.</p>
+
+      <div class="research-grid">
+        <article class="research-card">
+          <div class="card-label">Ongoing</div>
+          <h4>Dynamic Scene Graph Intelligence for Proactive Vehicle Safety</h4>
+          <p>Exploring dynamic scene understanding and graph-based intelligence for proactive vehicle safety applications.</p>
+        </article>
+
+        <article class="research-card">
+          <div class="card-label">Concept Development</div>
+          <h4>Space Scene Graph Intelligence for Autonomous Planetary Exploration</h4>
+          <p>Investigating scene graph intelligence for visual reasoning in autonomous planetary exploration.</p>
+        </article>
+
+        <article class="research-card">
+          <div class="card-label">Future Idea</div>
+          <h4>AI-Driven Knowledge Discovery from Boogar's Literature</h4>
+          <p>Future research direction focused on AI-assisted knowledge discovery from literature.</p>
+        </article>
+
+        <article class="research-card">
+          <div class="card-label">Research Focus</div>
+          <h4>Graph-Based Visual Reasoning</h4>
+          <p>Developing graph and transformer-based approaches for visual relationships and multimodal scene understanding.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-heading">
+        <span class="index">04</span>
+        <h3>Academic Experience</h3>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">AUG 2025 — JUL 2026</div>
+          <h4>Assistant Professor (Junior)</h4>
+          <div class="institution">Vellore Institute of Technology (VIT), Vellore</div>
+          <ul>
+            <li>Teach undergraduate and postgraduate courses in AI, Machine Learning, Computer Vision, Predictive Data Analytics, Financial Data Analytics, Python Programming, and Design & Analysis of Algorithms.</li>
+            <li>Mentor students in academic projects and research activities.</li>
+            <li>Conduct research in Scene Graph Generation, Graph Neural Networks, Vision Transformers, and Deep Learning.</li>
+            <li>Publish research articles and review manuscripts for international journals.</li>
+            <li>Contribute to curriculum development, outcome-based education, and academic assessment.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">AUG 2022 — JUL 2025</div>
+          <h4>Research Scholar</h4>
+          <div class="institution">Vellore Institute of Technology (VIT), Vellore</div>
+          <ul>
+            <li>Conducted doctoral research in Computer Vision and Graph Learning.</li>
+            <li>Developed transformer-based architectures for Scene Graph Generation and visual relationship prediction.</li>
+            <li>Designed graph-based reasoning frameworks for intelligent scene understanding.</li>
+            <li>Published research articles and filed Indian patents in AI and Computer Vision.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="section-heading">
+        <span class="index">05</span>
+        <h3>Education</h3>
+      </div>
+
+      <div class="education-grid">
+        <div class="education-card">
+          <div class="degree">Doctor of Philosophy (Ph.D.)</div>
+          <div class="school">Vellore Institute of Technology, Vellore<br>Research Area: Computer Vision, Scene Graph Generation & Graph Learning</div>
+          <span class="period">PURSUING · EXPECTED 2026</span>
+        </div>
+
+        <div class="education-card">
+          <div class="degree">Master of Engineering (M.E.)</div>
+          <div class="school">Computer Science — Specialization: Big Data Analytics<br>College of Engineering Guindy, Anna University, Chennai</div>
+          <span class="period">2019 — 2021</span>
+        </div>
+
+        <div class="education-card">
+          <div class="degree">Bachelor of Technology (B.Tech.)</div>
+          <div class="school">Information Technology<br>Hindustan Institute of Technology and Science, Chennai</div>
+          <span class="period">2015 — 2019</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="section-heading">
+        <span class="index">06</span>
+        <h3>Selected Publications</h3>
+      </div>
+
+      <div class="card">
+        <div class="publication">
+          <div class="pub-number">01</div>
+          <div>
+            <span class="type">CONFERENCE · IEEE SCSE 2026</span>
+            <h4>MATAN: Mixed Attention-Based Transformer Network with Visformer Features for Visual Relationship Modeling</h4>
+            <p>Monesh, S., &amp; Senthilkumar, N. C. · University of Kelaniya, Sri Lanka</p>
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="pub-number">02</div>
+          <div>
+            <span class="type">JOURNAL · IEEE ACCESS · 2025</span>
+            <h4>BiFormer for Scene Graph Generation Based on VisionNet with Taylor Hiking Optimization Algorithm</h4>
+            <p>Monesh, S., &amp; Senthilkumar, N. C.</p>
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="pub-number">03</div>
+          <div>
+            <span class="type">JOURNAL · 2024</span>
+            <h4>Review on Scene Graph Generation Methods</h4>
+            <p>Senthilkumar, N. C., &amp; Monesh, S. · Multiagent and Grid Systems, 20(2), 2024.</p>
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="pub-number">04</div>
+          <div>
+            <span class="type">JOURNAL · 2021</span>
+            <h4>Visual Relationship Prediction and Scene Graph Generation using Bi-GRU</h4>
+            <p>Monesh, S. · International Journal for Advanced Research, Ideas and Innovations in Technology (IJARIIT), 2021.</p>
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="pub-number">05</div>
+          <div>
+            <span class="type">CONFERENCE · 2019</span>
+            <h4>Digitized Bus Ticketing Framework</h4>
+            <p>Sharmila, V. C., Monesh, S., Aayush, R., Karesh, G., &amp; Ibrahim, I. · 1st International Conference on Innovations in Information and Communication Technology, 2019.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATENTS -->
+    <section id="patents">
+      <div class="section-heading">
+        <span class="index">07</span>
+        <h3>Published Patents</h3>
+      </div>
+
+      <div class="card">
+        <ul class="list-clean">
+          <li>Privacy-Preserving Distributed Surveillance System for Real-Time Suspicious Activity Detection Using Scene Graphs and Federated Learning <strong>(2026)</strong></li>
+          <li>Physics-Constrained Spatio-Temporal Scene Graph Validator for Video Authenticity Detection <strong>(2026)</strong></li>
+          <li>AI-Powered Smart Eyeglass Generates Scene Graph Knowledge for Clinical Surveillance <strong>(2025)</strong></li>
+          <li>AI-Powered Smartwatch for Food Intake Monitoring and Recommender System <strong>(2024)</strong></li>
+          <li>AI-Powered Tire Pressure Monitoring System for Heavy Vehicles <strong>(2024)</strong></li>
+          <li>Deep Learning-Based Automated Cow Distraction Device from Plastic Materials <strong>(2022)</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-heading">
+        <span class="index">08</span>
+        <h3>Research & Technical Projects</h3>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="card-label">Computer Vision · Graph Learning</div>
+          <h4>Scene Graph Generation and Relationship Modeling with Bi-GRU</h4>
+          <p>Research implementation for visual relationship prediction and scene graph generation.</p>
+          <br>
+          <a class="btn secondary" href="https://github.com/Monesh-97/VRD-and-SGG-using-Bi-GRU" target="_blank">View Repository →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="card-label">Zero-Shot Learning · Video</div>
+          <h4>Transductive Zero-Shot Learning for Video Tag Prediction</h4>
+          <p>Research project focused on multi-label video prediction using zero-shot learning.</p>
+          <br>
+          <a class="btn secondary" href="https://github.com/Monesh-97/Multi-Label-Prediction-For-videos-using-Zero_Shot_Learning" target="_blank">View Repository →</a>
+        </article>
+
+        <article class="project-card">
+          <div class="card-label">Application Development</div>
+          <h4>Centralised Mobile App for Passenger Ticket Generation</h4>
+          <p>Centralised mobile application concept for passenger ticket generation.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-heading">
+        <span class="index">09</span>
+        <h3>Technical Skills</h3>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h4>Programming</h4>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">Java</span>
+          </div>
+          <br>
+          <h4>AI & Research Domains</h4>
+          <div class="tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">SGG</span>
+            <span class="tag">GNN</span>
+            <span class="tag">Vision Transformers</span>
+            <span class="tag">Explainable AI</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4>Frameworks & Libraries</h4>
+          <div class="tags">
+            <span class="tag">TensorFlow</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Keras</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Scikit-learn</span>
+          </div>
+          <br>
+          <h4>Research Tools</h4>
+          <div class="tags">
+            <span class="tag">LaTeX</span>
+            <span class="tag">Jupyter Notebook</span>
+            <span class="tag">Google Colab</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section id="awards">
+      <div class="section-heading">
+        <span class="index">10</span>
+        <h3>Awards & Honors</h3>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <ul class="list-clean">
+            <li><strong>Raman Research Award (2025)</strong><br>For publishing research in an SCI-indexed journal.</li>
+            <li><strong>Dr. A.P.J. Abdul Kalam Award (2024)</strong><br>For publishing a review article in a Scopus-indexed journal.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <ul class="list-clean">
+            <li><strong>IEEE SCSE 2026 Presentation</strong><br>Presented MATAN at the University of Kelaniya, Sri Lanka.</li>
+            <li><strong>Professional Membership</strong><br>IEEE Member.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT -->
+    <section id="development">
+      <div class="section-heading">
+        <span class="index">11</span>
+        <h3>Professional Development & Certifications</h3>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <h4>Faculty Development Programs</h4>
+          <ul class="list-clean">
+            <li>Comprehensive Hands-on Sessions on Computer Vision and Artificial Intelligence Towards Applied Research — TLCE, VIT.</li>
+            <li>Deep Learning Architecture Concepts and GAN with Deepfake Techniques — Academic Staff College, VIT.</li>
+            <li>Digital Twin and Deep Learning — AI-Driven Approaches for Smart Factories — Academic Staff College, VIT.</li>
+            <li>Application of Optimization Techniques in Engineering — Academic Staff College, VIT.</li>
+            <li>Research Opportunities after Ph.D. — Academic Staff College, VIT.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4>Certifications</h4>
+          <ul class="list-clean">
+            <li>NPTEL — Computer Vision, IIT Kharagpur.</li>
+            <li>Google Cloud — Data Engineering, Big Data and Machine Learning on Google Cloud Platform Specialization.</li>
+            <li>Google Cloud — Feature Engineering on Google Cloud Platform.</li>
+          </ul>
+
+          <h4 style="margin-top:24px;">Courses Taught</h4>
+          <div class="tags">
+            <span class="tag">Artificial Intelligence</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Predictive Data Analytics</span>
+            <span class="tag">Financial Data Analytics</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Python Programming</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Monesh S · Academic & Research Portfolio</span>
+      <span>Computer Vision · Graph Learning · Artificial Intelligence</span>
+    </footer>
+
+  </main>
 </div>
-
-
-
 </body>
 </html>
